@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
         
         # https://community.spiceworks.com/how_to/110616-install-ansible-on-64-bit-centos-6-6
         ansible.vm.provision "shell",
-            inline: "echo cd ansible >> .bashrc; yum -y install epel-release; yum -y install wget git zip ansible"
+            inline: "echo cd ansible >> .bashrc; yum -y install epel-release; yum -y install wget git zip unzip ansible"
 
         # https://oddessay.com/development-notes/changing-vagrants-default-ssh-port-to-prevent-collision-when-resuming-a-suspended-instance
         ansible.vm.network "forwarded_port", guest: 22, host: 2220, id: "ssh"
